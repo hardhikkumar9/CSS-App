@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/home_menu"
+            android:title="Home"
+            android:icon="@drawable/ic_home"/>
+
+        <item android:id="@+id/profile_menu"
+            android:title="My Profile"
+            android:icon="@drawable/ic_person"/>
+
+        <item android:id="@+id/queries_menu"
+            android:title="My Queries"
+            android:icon="@drawable/ic_query"/>
+    </group>
+
+    <group android:checkableBehavior="single">
+
+
+    </group>
+
+</menu>

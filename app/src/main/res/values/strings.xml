@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">CSS Application</string>
+    <string name="login_account">Login Account</string>
+
+
+    <string-array name="roles">
+        <item>Institute/University</item>
+        <item>Student</item>
+        <item>Participant(ATAL)</item>
+        <item>Coordinator(ATAL)</item>
+        <item>Faculty</item>
+        <item>Other</item>
+        <item>Admin</item>
+    </string-array>
+
+    <string-array name="states">
+        <item>Andaman and Nicobar Islands</item>
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chhattisgar</item>
+        <item>Chandigarh</item>
+        <item>Dadar nd Nagar Haveli</item>
+        <item>Daman and Diu</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu and Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Ladakh</item>
+        <item>Lakshawdeep</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Odisha</item>
+        <item>Puducherry</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttar Pradesh</item>
+        <item>Uttarakhand</item>
+        <item>West Bengal</item>
+    </string-array>
+
+
+    <string-array name="application">
+        <item>Suggestion</item>
+        <item>Enquiry</item>
+        <item>Grievance</item>
+        <item>Complaint</item>
+        <item>Appreciation</item>
+        <item>Required Support</item>
+        <item>Willing to support</item>
+    </string-array>
+
+    <string name="select">Select Item</string>
+
+</resources>
