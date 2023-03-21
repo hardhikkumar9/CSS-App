@@ -49,9 +49,9 @@ public class SignUppage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        getSupportActionBar().hide();
 
         setContentView(R.layout.activity_sign_uppage);
 
@@ -99,6 +99,7 @@ public class SignUppage extends AppCompatActivity {
 
     }
 
+
     public void signupButtonClicked(View v) {
 
         String txtUserName = editTextUserName.getText().toString().trim();
@@ -116,7 +117,7 @@ public class SignUppage extends AppCompatActivity {
             editTextEmail.requestFocus();
         }
 
-        if (txtPassword.isEmpty() || txtPassword.length() < 10) {
+        if (txtPassword.isEmpty() || txtPassword.length() < 6) {
             editTextPassword.setError("Enter Password");
             editTextPassword.requestFocus();
         }
@@ -126,10 +127,19 @@ public class SignUppage extends AppCompatActivity {
             editTextMobileNo.requestFocus();
         }
 
-//        if (discheckBox.isChecked()) {
-//            editTextMobileNo.setError("Accept Disclaimer");
-//            editTextMobileNo.requestFocus();
+//        if(discheckBox.isChecked()) {
+//                discheckBox.setError("Accept the checkbox");
+//                discheckBox.requestFocus();
 //        }
+
+//        public void declarbox(View view) {
+//
+//            if(!discheckBox.isChecked()) {
+//                discheckBox.setError("Accept the checkbox");
+//                discheckBox.requestFocus();
+//            }
+//        }
+
 
         mAuth.createUserWithEmailAndPassword(txtEmail, txtPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override

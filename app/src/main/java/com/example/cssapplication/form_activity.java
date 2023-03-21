@@ -2,6 +2,7 @@ package com.example.cssapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -29,9 +30,9 @@ public class form_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        getSupportActionBar().hide();
 
         setContentView(R.layout.activity_form_activity);
 
@@ -97,5 +98,11 @@ public class form_activity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Item: "+items4, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void submitquery(View view) {
+        Toast.makeText(form_activity.this, "Query sent successfully",Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, home_page.class);
+        startActivity(intent);
     }
 }

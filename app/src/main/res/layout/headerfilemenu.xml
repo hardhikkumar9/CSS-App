@@ -11,11 +11,13 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/logo"/>
+        android:layout_marginTop="13dp"
+        android:src="@drawable/logo" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:text="Centralized Support System"
         android:textColor="@color/white"
         android:textStyle="bold"

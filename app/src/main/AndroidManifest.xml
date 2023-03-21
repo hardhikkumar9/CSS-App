@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CSSApplication">
-        <activity android:name=".SplashScreen">
+        <activity android:name=".queries_menu"></activity>
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".form_activity" />
-        <activity android:name=".home_page" ></activity>
+        <activity android:name=".home_page" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".SignUppage" />
         <activity android:name=".SignInpage" />

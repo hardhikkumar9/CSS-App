@@ -37,9 +37,9 @@ public class SignInpage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        getSupportActionBar().hide();
 
         setContentView(R.layout.activity_sign_inpage);
 
@@ -87,64 +87,39 @@ public class SignInpage extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //////////
+
     public void loginhome(View v) {
 
-        String txtemail = editTextEmail.getText().toString().trim();
-        String txtpassword = editTextPassword.getText().toString().trim();
 
-        if (txtemail.isEmpty()) {
-            editTextEmail.setError("Enter Email");
+        String UserName = editTextEmail.getText().toString().trim();
+        String Password = editTextPassword.getText().toString().trim();
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(UserName).matches()) {
+            editTextEmail.setError("Please Enter a Valid Email");
             editTextEmail.requestFocus();
         }
 
-        if (txtpassword.isEmpty() || txtpassword.length() < 10) {
-            editTextPassword.setError("Enter Password");
+        if (editTextPassword.length() < 6) {
+            editTextPassword.setError("Please Enter Correct Password");
             editTextPassword.requestFocus();
         }
 
-        else {
-            Intent intent = new Intent(this, home_page.class);
-            startActivity(intent);
 
-        }
+        mAuth.signInWithEmailAndPassword(UserName, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
 
+                if (task.isSuccessful()) {
+                    Toast.makeText(SignInpage.this, "User Has Successfully Signed In",Toast.LENGTH_LONG).show();
+
+                    startActivity(new Intent(SignInpage.this, home_page.class));
+                }
+
+                else {
+                    Toast.makeText(SignInpage.this, "User is failed Signed In",Toast.LENGTH_LONG).show();
+
+                }
+            }
+        });
     }
-    //////
-
-
-//    public void loginhome(View v) {
-//
-//
-//        String UserName = editTextUserName.getText().toString().trim();
-//        String Password = editTextPassword.getText().toString().trim();
-//
-//        if (!Patterns.EMAIL_ADDRESS.matcher(UserName).matches()) {
-//            editTextUserName.setError("Please Enter a Valid Email");
-//            editTextUserName.requestFocus();
-//        }
-//
-//        if (editTextPassword.length() < 6) {
-//            editTextPassword.setError("Please Enter Correct Password");
-//            editTextPassword.requestFocus();
-//        }
-//
-//
-//        mAuth.signInWithEmailAndPassword(UserName, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//            @Override
-//            public void onComplete(@NonNull Task<AuthResult> task) {
-//
-//                if (task.isSuccessful()) {
-//                    Toast.makeText(SignInpage.this, "User Has Successfully Signed In",Toast.LENGTH_LONG).show();
-//
-//                    startActivity(new Intent(SignInpage.this, home_page.class));
-//                }
-//
-//                else {
-//                    Toast.makeText(SignInpage.this, "User is failed Signed In",Toast.LENGTH_LONG).show();
-//
-//                }
-//            }
-//        });
-//    }
 }

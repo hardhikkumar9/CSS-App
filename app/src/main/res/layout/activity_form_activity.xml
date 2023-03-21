@@ -233,6 +233,7 @@
                     android:background="@drawable/button_login"
                     app:backgroundTint="@null"
                     android:text="Submit"
+                    android:onClick="submitquery"
                     android:textAlignment="center"
                     android:layout_gravity="center_horizontal"/>
 
